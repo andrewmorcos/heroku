@@ -14,7 +14,7 @@
     },
     "MASTER_KEY": {
       "description": "A key that overrides all permissions. Keep this secret.",
-      "value": ""
+      "value": "z7JGPZXO9QgB3OLvE4zHBX7Dz6JtGCSHupM7oFL7"
     },
     "DATABASE_URI": {
       "description": "Connection string for your database.",
