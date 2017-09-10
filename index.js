@@ -21,10 +21,6 @@ var api = new ParseServer({
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
   push: {
-        android: {
-            senderId: '', // The Sender ID of GCM
-            apiKey: '' // The Server API Key of GCM
-        },
         ios: {
             pfx: 'push.p12', // the path and filename to the .p12 file you exported earlier. 
             cert: '', // If not using the .p12 format, the path to the certificate PEM to load from disk
