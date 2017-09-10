@@ -19,7 +19,7 @@ var api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'http://kaman-os-2.herokuapp.com/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  }
+  },
   push: {
         ios: {
             pfx: 'push.p12', // the path and filename to the .p12 file you exported earlier. 
