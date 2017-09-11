@@ -12,11 +12,11 @@ if (!databaseUri) {
 }
 
 var api = new ParseServer({
-  databaseURI: databaseUri || 'mongodb://heroku_sd8cxbxb:labrv73rq2tbbfeicm201d1pfi@ds111754.mlab.com:11754/heroku_sd8cxbxbhttp://kaman-os-2.herokuapp.com/parse',
+  databaseURI: databaseUri || process.env.MONGODB_URI,
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  appId: process.env.APP_ID || '1vbNptEzFhOptvNm0cs0Gud8kVCFMg4LjyczEcXhaaaaaa',
-  masterKey: process.env.MASTER_KEY || 'z7JGPZXO9QgB3OLvE4zHBX7Dz6JtGCSHupM7oFL7', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://kaman-os-2.herokuapp.com/parse',  // Don't forget to change to https if needed
+  appId: process.env.APP_ID || '',
+  masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
+  serverURL: process.env.SERVER_URL || '',  // Don't forget to change to https if needed
   liveQuery: {
   classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
@@ -63,6 +63,7 @@ var httpServer = require('http').createServer(app);
 httpServer.listen(port, function() {
     console.log('parse-server-example running on port ' + port + '.');
     console.log('Andrew'+process.env.MASTER_KEY);
+  console.log('Andrew 2 '+__dirname);
 });
 
 // This will enable the Live Query real-time server
