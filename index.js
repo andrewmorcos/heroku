@@ -17,9 +17,9 @@ var api = new ParseServer({
   appId: process.env.APP_ID || '1vbNptEzFhOptvNm0cs0Gud8kVCFMg4LjyczEcXhaaaaaa',
   masterKey: process.env.MASTER_KEY || 'z7JGPZXO9QgB3OLvE4zHBX7Dz6JtGCSHupM7oFL7', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://kaman-os-2.herokuapp.com/parse',  // Don't forget to change to https if needed
-  //liveQuery: {
-  //  classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  //},
+  liveQuery: {
+  classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  },
   push: {
         ios: [{
             pfx: '/app/devpush.p12', // the path and filename to the .p12 file you exported earlier. 
