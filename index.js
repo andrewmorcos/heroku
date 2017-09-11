@@ -25,7 +25,7 @@ var api = new ParseServer({
             pfx: '/app/devpush.p12', // the path and filename to the .p12 file you exported earlier. 
             passphrase: 'Smart_2010',
             topic: 'com.riadco.kaman', // The bundle identifier associated with your app
-            production: false // Specifies which environment to connect to: Production (if true) or Sandbox
+            production: true // Specifies which environment to connect to: Production (if true) or Sandbox
         }
     }
 });
