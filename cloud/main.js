@@ -25,7 +25,7 @@ Parse.Cloud.define("iosPushTest", function(request, response) {
       console.log("#### PUSH OK");
   }, error: function(error) {
       console.log("#### PUSH ERROR" + error.message);
-  }, useMasterKey: false});
+  }, useMasterKey: true});
 
   response.success('success');
 });
