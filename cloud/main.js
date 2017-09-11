@@ -5,7 +5,7 @@
 
 // iOS push testing
 Parse.Cloud.define("iosPushTest", function(request, response) {
-
+console.log('inside mainjs');
   // request has 2 parameters: params passed by the client and the authorized user                                                                                                                               
   var params = request.params;
   var user = request.user;
