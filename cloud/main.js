@@ -2,10 +2,10 @@
 //Parse.Cloud.define('hello', function(req, res) {
  // res.success('Hi');
 //});
-
+console.log('main1 reached');
 // iOS push testing
 Parse.Cloud.define("iosPushTest", function(request, response) {
-console.log('inside mainjs');
+console.log('main2 reached');
   // request has 2 parameters: params passed by the client and the authorized user                                                                                                                               
   var params = request.params;
   var user = request.user;
