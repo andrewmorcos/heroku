@@ -1,7 +1,37 @@
 // With promises
 console.log('KAMAN Main1 Reached');
 
-Parse.Push.send({
+// iOS push testing
+Parse.Cloud.define("iosPush", function(request, response) {
+
+  var user = request.user;
+  var params = request.params;
+  var someKey = params.someKey
+  var data = params.data
+
+  var pushQuery = new Parse.Query(Parse.Installation);
+  pushQuery.equalTo('deviceType', 'ios'); // targeting iOS devices only
+  pushQuery.equalTo("someKey", someKey)
+
+  Parse.Push.send({
+    where: pushQuery, // Set our Installation query
+    data: data
+  }, { success: function() {
+      console.log("#### PUSH OK");
+  }, error: function(error) {
+      console.log("#### PUSH ERROR" + error.message);
+  }, useMasterKey: true});
+
+  response.success('success');
+});
+
+
+
+//Parse.initialize("1vbNptEzFhOptvNm0cs0Gud8kVCFMg4LjyczEcXh", "javascriptkey", "z7JGPZXO9QgB3OLvE4zHBX7Dz6JtGCSHupM7oFL7");
+//var pushQuery = new Parse.Query(Parse.Installation);
+
+
+/*Parse.Push.send({
 channels: ['Giants'],
 data: {
 alert: 'The Giants Mets 2-3.',
@@ -16,7 +46,7 @@ error: function(error) {
 console.log('##### PUSH ERROR');
 },
 useMasterKey: true
-});
+});*/
 /*
 // iOS push testing
 Parse.Cloud.define("iosPushTest", function(request, response) {
