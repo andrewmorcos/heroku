@@ -1,7 +1,15 @@
 // With promises
 console.log('KAMAN Main1 Reached');
-Parse.Push.send(
-  console.log('Push function reached'););
+
+
+Parse.Push.send()
+.then(function() {
+  console.log('KAMAN Push sent');// Push sent!
+}, function(error) {
+  console.log('KAMAN push failed');// There was a problem :(
+});
+
+
 /*arse.Push.send({
 /  where: { ... },
   data: { ... }
