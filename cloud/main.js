@@ -1,7 +1,7 @@
 // With promises
 console.log('KAMAN Main1 Reached');
 Parse.Push.send(
-  console.log('Push function reached');
+  console.log('Push function reached'););
 /*arse.Push.send({
 /  where: { ... },
   data: { ... }
