@@ -9,7 +9,7 @@ console.log('KAMAN Main1 Reached');
 }, function(error) {
   console.log('KAMAN push failed');// There was a problem :(
 });
-*/
+
 // With Legacy Backbone callbacks
 Parse.Push.send({
   where: query,
@@ -27,3 +27,4 @@ Parse.Push.send({
     console.log('KAMAN push 2 failed');// There was a problem :(
   }
 });
+*/
