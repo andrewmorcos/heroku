@@ -20,14 +20,13 @@ console.log('KAMAN main2 reached');
     data: {
       alert: "Message: " + messageText
     }
-  }, { success: function() {
-      console.log("#### PUSH OK");
-  }, error: function(error) {
-      console.log("#### PUSH ERROR" + error.message);
-  }, useMasterKey: true});
-
-  response.success('success');
+  }, {useMasterKey: true} ).then(function() {
+  console.log('KAMAN Push sent');// Push sent!
+}, function(error) {
+  console.log('KAMAN push failed');// There was a problem :(
 });
+  
+  
 
 
 
