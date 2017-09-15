@@ -1,7 +1,7 @@
 // With promises
 console.log('KAMAN Main1 Reached');
-Parse.Push.send({
-  where: { ... },
+/*arse.Push.send({
+/  where: { ... },
   data: { ... }
 }, { useMasterKey: true })
 .then(function() {
@@ -9,7 +9,7 @@ Parse.Push.send({
 }, function(error) {
   console.log('KAMAN push failed');// There was a problem :(
 });
-
+*/
 // With Legacy Backbone callbacks
 Parse.Push.send({
   where: query,
