@@ -5,9 +5,9 @@ Parse.Push.send({
   data: { ... }
 }, { useMasterKey: true })
 .then(function() {
-  // Push sent!
+  console.log('KAMAN Push sent');// Push sent!
 }, function(error) {
-  // There was a problem :(
+  console.log('KAMAN push failed');// There was a problem :(
 });
 
 // With Legacy Backbone callbacks
@@ -21,9 +21,9 @@ Parse.Push.send({
 }, {
   useMasterKey: true,
   success: function() {
-    // Push sent!
+    console.log('KAMAN push 2 sent');// Push sent!
   },
   error: function(error) {
-    // There was a problem :(
+    console.log('KAMAN push 2 failed');// There was a problem :(
   }
 });
