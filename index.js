@@ -58,6 +58,7 @@ var httpServer = require('http').createServer(app);
 httpServer.listen(port, function() {
     console.log('parse-server-example running on port ' + port + '.');
     console.log('Andrew'+process.env.MASTER_KEY);
+  console.log('TEST CLOUD'+(process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js'));
   console.log('Andrew 2 '+__dirname);
 });
 
