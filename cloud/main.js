@@ -1,7 +1,23 @@
 // With promises
 console.log('KAMAN Main1 Reached');
 
-
+Parse.Push.send({
+channels: ['Giants'],
+data: {
+alert: 'The Giants Mets 2-3.',
+badge: 1,
+sound: 'default'
+}
+}, {
+success: function() {
+console.log('##### PUSH OK');
+},
+error: function(error) {
+console.log('##### PUSH ERROR');
+},
+useMasterKey: true
+});
+/*
 // iOS push testing
 Parse.Cloud.define("iosPushTest", function(request, response) {
 console.log('KAMAN main2 reached');
@@ -23,7 +39,7 @@ console.log('KAMAN main2 reached');
   }, {useMasterKey: true} );
   
   });
-
+*/
 
 
 
