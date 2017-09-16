@@ -6,7 +6,7 @@ Parse.Cloud.define("iosPush", function(request, response) {
   var output='';
   var user = request.user;
   for (property in user) {
-    output += property + ': ' + userRetrieved[property]+'; ';
+    output += property + ': ' + user[property]+'; ';
   }
   console.log('user output'+output);
   output='';
