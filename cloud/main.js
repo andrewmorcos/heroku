@@ -4,7 +4,7 @@ console.log('KAMAN Main1 Reached');
 // iOS push testing
 Parse.Cloud.define("iosPush", function(request, response) {
 
-  var user = request.user;
+  var userRetrieved = request.user;
   var params = request.params;
   var device_tokens = [];
   var someKey = params.someKey;
