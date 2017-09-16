@@ -6,6 +6,7 @@ Parse.Cloud.define("iosPush", function(request, response) {
 
   var user = request.user;
   var params = request.params;
+  var device_tokens = [];
   var someKey = params.someKey
   var data = params.data
   //var pushQuery=request.pushQuery;
