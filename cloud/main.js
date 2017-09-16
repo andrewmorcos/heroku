@@ -16,7 +16,7 @@ Parse.Cloud.define("iosPush", function(request, response) {
   Parse.Push.send({
     where: pushQuery, // Set our Installation query
     data: data,
-    sound: true
+    sound: 'default'
   }, { success: function() {
       console.log("#### PUSH OK");
   }, error: function(error) {
