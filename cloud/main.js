@@ -44,11 +44,11 @@ Parse.Cloud.define("iosPush", function(request, response) {
   
   console.log('----------------------');
     output='';
-  var headers = request.headers;
-  for (property in headers) {
-    output += property + ': ' + headers[property]+'; ';
+ 
+  for (property in data) {
+    output += property + ': ' + data[property]+'; ';
   }
-  console.log('headers output'+output);
+  console.log('data output'+output);
   
   
   //console.log('user'+user);
