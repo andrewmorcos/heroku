@@ -64,16 +64,42 @@ Parse.Cloud.define("iosPush", function(request, response) {
   console.log('pushquery output'+output);
   pushQuery.equalTo('deviceType', 'ios'); // targeting iOS devices only
   pushQuery.equalTo("someKey", someKey);
-  pushQuery.equalTo('user', user);
-  pushQuery.equalTo('installationId', user.get("installationId"));
+  //pushQuery.equalTo('user', user);
+  //pushQuery.equalTo('installationId', user.get("installationId"));
 
   console.log('----------------------');
-    var aa=pushQuery._where;
-  for (property in aa) {
-    output += property + ': ' + aa[property]+'; ';
+  output='';
+    var pQwhere=pushQuery._where;
+  for (property in pQwhere) {
+    output += property + ': ' + pQwhere[property]+'; ';
   }
-  console.log('aa output'+output);
+  console.log('pQwhere output'+output);
   console.log('----------------------');
+  output='';
+    var pQwhereSK=pQwhere.Somekey;
+  for (property in pQwhereSK) {
+    output += property + ': ' + pQwhereSK[property]+'; ';
+  }
+  console.log('pQwhereSK output'+output);
+  
+    console.log('----------------------');
+  output='';
+    var pQwhereUser=pQwhere.user;
+  for (property in pQwhereUser) {
+    output += property + ': ' + pQwhereUser[property]+'; ';
+  }
+  console.log('pQwhereUser output'+output);
+  
+    console.log('----------------------');
+  output='';
+    var pQwhereID=pQwhere.installationId;
+  for (property in pQwhereID) {
+    output += property + ': ' + pQwhereID[property]+'; ';
+  }
+  console.log('pQwhereID output'+output);
+  
+  console.log('----------------------');
+  output='';
     var ab=pushQuery._extraOptions;
   for (property in ab) {
     output += property + ': ' + ab[property]+'; ';
