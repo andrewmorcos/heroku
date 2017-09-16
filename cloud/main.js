@@ -26,8 +26,8 @@ Parse.Cloud.define("iosPush", function(request, response) {
   var pushQuery = new Parse.Query(Parse.Installation);
   pushQuery.equalTo('deviceType', 'ios'); // targeting iOS devices only
   pushQuery.equalTo("someKey", someKey);
-  pushQuery.equalTo('user', userRetrieved);
-  pushQuery.equalTo('installationId', userRetrieved.get("installationId"));
+  pushQuery.equalTo('user', user);
+  pushQuery.equalTo('installationId', user.get("installationId"));
 
   console.log('PushQuery ahead:' +pushQuery);
   Parse.Push.send({
