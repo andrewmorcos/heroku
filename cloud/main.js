@@ -67,7 +67,20 @@ Parse.Cloud.define("iosPush", function(request, response) {
   pushQuery.equalTo('user', user);
   pushQuery.equalTo('installationId', user.get("installationId"));
 
-  console.log('PushQuery ahead:' +pushQuery);
+  console.log('----------------------');
+    var aa=pushQuery._where;
+  for (property in aa) {
+    output += property + ': ' + aa[property]+'; ';
+  }
+  console.log('aa output'+output);
+  console.log('----------------------');
+    var ab=pushQuery._extraOptions;
+  for (property in ab) {
+    output += property + ': ' + ab[property]+'; ';
+  }
+  console.log('ab output'+output);
+  
+  
   Parse.Push.send({
     where: pushQuery, // Set our Installation query
     data: data,
