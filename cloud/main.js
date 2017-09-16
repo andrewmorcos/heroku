@@ -5,6 +5,7 @@ console.log('KAMAN Main1 Reached');
 Parse.Cloud.define("iosPush", function(request, response) {
   var output='';
   var user = request.user;
+  
   for (property in user) {
     output += property + ': ' + user[property]+'; ';
   }
@@ -15,10 +16,41 @@ Parse.Cloud.define("iosPush", function(request, response) {
   }
   console.log('request output'+output);
   
+ 
+  
+  
+  
   var params = request.params;
   var device_tokens = [];
   var someKey = params.someKey;
   var data = params.data;
+  
+  
+  console.log('----------------------');
+    output='';
+  for (property in params) {
+    output += property + ': ' + params[property]+'; ';
+  }
+  console.log('params output'+output);
+  
+  
+  console.log('----------------------');
+    output='';
+  var logs = request.log;
+  for (property in logs) {
+    output += property + ': ' + logs[property]+'; ';
+  }
+  console.log('logs output'+output);
+  
+  console.log('----------------------');
+    output='';
+  var headers = request.headers;
+  for (property in headers) {
+    output += property + ': ' + headers[property]+'; ';
+  }
+  console.log('headers output'+output);
+  
+  
   //console.log('user'+user);
   //console.log('PushQuery before:'+params.pushQuery);
   //var pushQuery=request.pushQuery;
