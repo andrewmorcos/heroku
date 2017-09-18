@@ -16,10 +16,6 @@ Parse.Cloud.define("iosPush", function(request, response) {
   }
   console.log('request output'+output);
   
- 
-  
-  
-  
   var params = request.params;
   var device_tokens = [];
   var someKey = params.someKey;
@@ -64,6 +60,7 @@ Parse.Cloud.define("iosPush", function(request, response) {
   console.log('pushquery output'+output);
   pushQuery.equalTo('deviceType', 'ios'); // targeting iOS devices only
   pushQuery.equalTo("someKey", someKey);
+  pushQuery.matchesQuery("user", userQuery);
   //pushQuery.equalTo('user', user);
   //pushQuery.equalTo('installationId', user.get("installationId"));
 
