@@ -20,31 +20,11 @@ Parse.Cloud.define("iosPush", function(request, response) {
   var device_tokens = [];
   var someKey = params.someKey;
   var data = params.data;
+  var targetUsers=params.targetUsers;
   
+
+  console.log('THE TARGET USERS'+targetUsers);
   
-  console.log('----------------------');
-    output='';
-  for (property in params) {
-    output += property + ': ' + params[property]+'; ';
-  }
-  console.log('params output'+output);
-  
-  
-  console.log('----------------------');
-    output='';
-  var logs = request.log;
-  for (property in logs) {
-    output += property + ': ' + logs[property]+'; ';
-  }
-  console.log('logs output'+output);
-  
-  console.log('----------------------');
-    output='';
- 
-  for (property in data) {
-    output += property + ': ' + data[property]+'; ';
-  }
-  console.log('data output'+output);
   
   
   //console.log('user'+user);
