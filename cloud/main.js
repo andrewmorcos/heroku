@@ -58,8 +58,18 @@ Parse.Cloud.define("iosPush", function(request, response) {
     output += property + ': ' + pushQuery[property]+'; ';
   }
   console.log('pushquery output'+output);
+  
+  //new
+  var userQuery = new Parse.Query(Parse.User);
+  userQuery.equalTo("email", 'andrew.morcos@gmail.com');
+  
+  //close new/
   pushQuery.equalTo('deviceType', 'ios'); // targeting iOS devices only
   pushQuery.equalTo("someKey", someKey);
+  //new
+  pushQuery.exists("user"); // filter out installations without users
+        pushQuery.include('user');
+  //endnew
   pushQuery.matchesQuery("user", userQuery);
   //pushQuery.equalTo('user', user);
   //pushQuery.equalTo('installationId', user.get("installationId"));
