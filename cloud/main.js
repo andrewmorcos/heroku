@@ -40,8 +40,10 @@ Parse.Cloud.define("iosPush", function(request, response) {
   console.log('pushquery output'+output);
   
   //new
+  var emails =["andrew.morcos@gmail.com", "ahmed.abdelbaqi@gmail.com"];
   var userQuery = new Parse.Query(Parse.User);
-  userQuery.equalTo("email", 'andrew.morcos@gmail.com');
+  userQuery.equalTo("email", emails);
+  console.log("Emails array");
   
   //close new/
   pushQuery.equalTo('deviceType', 'ios'); // targeting iOS devices only
